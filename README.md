@@ -2,9 +2,7 @@
 
 ## Dependency Requirement
 
-`numpy` should be preinstalled.
-`modern_robotics` should be preinstalled.
-`urdfpy` should be preinstalled.
+`numpy` , `modern_robotics` , `urdfpy` should be preinstalled.
 
 ## Installing the Package ##
 
@@ -14,6 +12,10 @@ Use [pip](https://en.wikipedia.org/wiki/Pip_(package_manager)) to install by
 running
 
 ```
+pip install numpy
+pip install modern_robotics
+pip install urdfpy
+
 pip install .
 ``` 
 
