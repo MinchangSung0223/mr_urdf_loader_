@@ -1,4 +1,4 @@
-# "modern_robotics" Python Package Instructions #
+# "mr_urdf_loader" Python Package Instructions #
 
 ## Dependency Requirement
 
