@@ -30,6 +30,22 @@ To import the package, we recommend using
 from mr_urdf_loader import loadURDF
 MRSetup = loadURDF(urdf_name)
 ```
+## Examples ##
+### 1. Simple MR test
+```bash
+cd example
+python3 urdf_loader.py
+```
+![image](https://user-images.githubusercontent.com/53217819/202921164-f450da46-58bd-4335-a0b7-018957b851b0.png)
+
+
+### 2. Pybullet Simulation
+```bash
+cd example
+pip install pybullet
+python3 sim.py
+```
+![image](https://user-images.githubusercontent.com/53217819/202921126-a5c297fb-fd0f-4ef4-91fe-4e0b7821c516.png)
 
 
 ## Using the Package Locally ##
