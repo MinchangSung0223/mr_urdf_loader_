@@ -68,6 +68,7 @@ def loadURDF(urdf_name):
 	M_list = [np.eye(4)]
 
 	Glist =[]
+	com_p_=[]
 	for joint in robot.actuated_joints:
 		child_link = getJoint(robot,joint.child)
 		p_.append(TransformToXYZ(robot.link_fk()[child_link]))
@@ -78,11 +79,15 @@ def loadURDF(urdf_name):
 
 		child_M = robot.link_fk()[child_link] 
 		child_M_R, child_M_p =mr.TransToRp(child_M)
-		chlid_w = np.array(child_M_R @ np.array(joint.axis).T)
-		w_.append( chlid_w ) 
-		CoM_M = robot.link_fk()[child_link] @ child_link.inertial.origin
+		child_w = np.array(child_M_R @ np.array(joint.axis).T)
+		w_.append( child_w ) 
+		child_M[0:3,0:3] = np.eye(3)
+		CoM_M =  child_M@ child_link.inertial.origin
+
 		M_list.append(CoM_M)
-	M = robot.link_fk()[robot.links[-1]]		
+	eef_link = getJoint(robot,robot.end_links[0].name)
+	M = robot.link_fk()[eef_link]	
+		
 	M_list.append(M)
 	Slist = w_p_to_Slist(w_,p_,JointNum)	
 	Blist = mr.Adjoint(mr.TransInv(M))@ Slist
