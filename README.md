@@ -33,7 +33,7 @@ MRSetup = loadURDF(urdf_name)
 ## Examples ##
 ### 1. Simple MR test
 ```bash
-cd example
+cd example/3DoF
 python3 urdf_loader.py
 ```
 ![image](https://user-images.githubusercontent.com/53217819/202921164-f450da46-58bd-4335-a0b7-018957b851b0.png)
@@ -41,13 +41,19 @@ python3 urdf_loader.py
 
 ### 2. Pybullet Simulation
 ```bash
-cd example
+cd example/3DoF
 pip install pybullet
 python3 sim.py
 ```
 ![image](https://user-images.githubusercontent.com/53217819/202921126-a5c297fb-fd0f-4ef4-91fe-4e0b7821c516.png)
 
 
+### 3. UR5 Simulation
+```bash
+cd example/ur5
+python3 ur5_sim.py
+```
+![image](https://user-images.githubusercontent.com/53217819/202973442-54be472e-c43e-4569-981f-bc87bf00b678.png)
 ## Using the Package Locally ##
 
 It is possible to use the package locally without installation. Download and
